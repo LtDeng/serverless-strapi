@@ -1,0 +1,39 @@
+{
+  "name": "serverless-strapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "build:separate": "strapi build && ./scripts/post-build.sh",
+    "strapi": "strapi"
+  },
+  "devDependencies": {
+    "serverless-offline": "^13.5.0"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "4.24.2",
+    "@strapi/plugin-i18n": "4.24.2",
+    "@strapi/plugin-users-permissions": "4.24.2",
+    "@strapi/strapi": "4.24.2",
+    "better-sqlite3": "8.6.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "serverless-http": "^3.2.0",
+    "styled-components": "5.3.3"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "3dcdd831-e0cb-44ff-8124-0a7c0275b922"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
