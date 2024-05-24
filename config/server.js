@@ -1,9 +1,12 @@
 const getUrl = ({ env }) => {
   if (process.argv.join(" ").includes("strapi develop")) {
+    console.log("DEV");
     return "";
   } else if (env.bool("IS_OFFLINE") || env.bool("BUILD_FOR_OFFLINE")) {
-    return "http://localhost:3000/dev";
+    console.log("OFFLINE");
+    return "http://localhost:4000/dev";
   } else {
+    console.log("PROD");
     return env("SERVER_URL", "dev");
   }
 };
