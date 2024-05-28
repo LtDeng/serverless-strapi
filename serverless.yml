@@ -1,6 +1,6 @@
 
 service: sls-strapi
-frameworkVersion: "3"
+frameworkVersion: "4"
 useDotenv: true
 
 provider:
@@ -26,12 +26,12 @@ provider:
     DATABASE_NAME: ${env:DATABASE_NAME}
     DATABASE_HOST: ${env:DATABASE_HOST}
 package:
-  excludeDevDependencies: false
+  excludeDevDependencies: true
   patterns:
     - "build/**"
     - "config/**"
     - "database/**"
-    - "node_modules/**"
+    - "!node_modules/**"
     - "public/**"
     - "src/**"
     - ".env.example"
