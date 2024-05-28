@@ -11,7 +11,9 @@
     "strapi": "strapi"
   },
   "devDependencies": {
-    "serverless-offline": "^13.5.0"
+    "serverless-offline": "^13.5.0",
+    "serverless-plugin-common-excludes": "^4.0.0",
+    "serverless-plugin-include-dependencies": "^6.1.0"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.24.2",
@@ -35,5 +37,7 @@
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
+  "os": ["linux"],
+  "cpu": ["x64"],
   "license": "MIT"
 }

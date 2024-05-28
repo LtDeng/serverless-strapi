@@ -5,7 +5,7 @@ useDotenv: true
 
 provider:
   name: aws
-  runtime: nodejs20.x
+  runtime: nodejs18.x
   region: eu-west-2
   profile: serverless-strapi-admin
   logRetentionInDays: 1
@@ -26,21 +26,33 @@ provider:
     DATABASE_NAME: ${env:DATABASE_NAME}
     DATABASE_HOST: ${env:DATABASE_HOST}
 package:
-  excludeDevDependencies: true
+  excludeDevDependencies: false
   patterns:
     - "build/**"
     - "config/**"
     - "database/**"
-    - "!node_modules/**"
     - "public/**"
     - "src/**"
     - ".env.example"
     - "package.json"
-    - "!node_modules/esbuild-linux-64/**"
-    - "!node_modules/@babel/**"
-    - "!node_modules/@types/**"
-    - "!node_modules/webpack/**"
+    - "types/**"
+    - "node_modules/sharp/**"
+    - "node_modules/**/sharp/**"
+    - "!node_modules/**"
+    - "!node_modules/**/README.*"
+    - "!node_modules/**/test/**"
+    - "!node_modules/@floating-ui/**"
+    - "!node_modules/@react-dnd/**"
     - "!node_modules/@sentry/**"
+    - "!node_modules/css-color-keywords/**"
+    - "!node_modules/css-loader/**"
+    - "!node_modules/css-to-react-native/**"
+    - "!node_modules/css-what/**"
+    - "!node_modules/prettier-plugin-packagejson/**"
+    - "!node_modules/redux*/**"
+    - "!node_modules/react*/**"
+    - "!node_modules/styled-components/**"
+    - "!node_modules/webpack*/**"
 functions:
   api:
     handler: src/app.strapiHandler
@@ -56,6 +68,8 @@ functions:
 
 plugins:
   - serverless-offline
+  - serverless-plugin-include-dependencies
+  - serverless-plugin-common-excludes
 
 custom:
   serverless-offline:
